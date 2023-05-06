@@ -1,0 +1,3 @@
+# Run Rails & Build Vue concurrently
+vue: yarn --cwd frontend build --watch
+rails: bundle exec rails server
