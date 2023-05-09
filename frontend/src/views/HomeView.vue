@@ -1,18 +1,20 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <Modal title="My Modal" ref="modal"></Modal>
+    <button @click="modal.show()">Show Modal</button>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import { Component, Ref, Vue } from "vue-property-decorator";
+import Modal from "@/components/shared/ModalComponent.vue";
 
 @Component({
   components: {
-    HelloWorld,
+    Modal,
   },
 })
-export default class HomeView extends Vue {}
+export default class HomeView extends Vue {
+  @Ref() modal!: Modal;
+}
 </script>
